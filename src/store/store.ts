@@ -1,4 +1,4 @@
-import { configureStore, combineReducers, ThunkAction, Action } from '@reduxjs/toolkit'
+import { configureStore, combineReducers, ThunkAction, Action, applyMiddleware } from '@reduxjs/toolkit'
 import appSlice from './appSlice'
 
 // 模块
