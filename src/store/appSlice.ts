@@ -46,8 +46,7 @@ const counterSlice = createSlice({
 
 export const { increment, decrement, setLoading } = counterSlice.actions;
 
-export default counterSlice.reducer
-
+// 异步方法
 export const increAsync = (payload:number = 0): AppThunk => async (dispatch, getState) => {
   const { app: { count } } = getState();
   dispatch(setLoading(true))
@@ -57,5 +56,6 @@ export const increAsync = (payload:number = 0): AppThunk => async (dispatch, get
   }, 3000);
 };
 
+export default counterSlice.reducer
 
 
