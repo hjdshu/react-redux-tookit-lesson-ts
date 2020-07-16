@@ -1,6 +1,7 @@
 import { configureStore, combineReducers, ThunkAction, Action } from '@reduxjs/toolkit'
 import appSlice from './appSlice'
 
+// 模块
 const store = configureStore({
   reducer: combineReducers({
     app: appSlice

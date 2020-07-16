@@ -1,4 +1,3 @@
-const RequestQ = () => {}
 
 export function UserLogin (userName: string) {
   interface Result {
@@ -6,7 +5,10 @@ export function UserLogin (userName: string) {
     msg: string //登陆结果说明
   }
   return new Promise<Result>((resolve, reject) => {
-    RequestQ();
+    resolve({
+      errno: 0,
+      msg: 'no error'
+    })
   });
 }
 

@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+
 import { RootState } from './store/store'
 import { increment, decrement, increAsync } from './store/appSlice';
+
+import { UserLogin } from './api'
 
 function App() {
 
@@ -17,12 +19,19 @@ function App() {
 
   // dispatch async increAsync
   const setCountAddAsync = function () { 
-    dispatch(increAsync(11));
+    dispatch(increAsync(4));
   }
 
   // dispatch decrement
   const decrementSet = function () { 
     dispatch(decrement());
+  }
+
+  const login = async () => {
+    let msg = await UserLogin('zhangsan')
+    if (msg.errno === 0) {
+      alert('登录成功')
+    }
   }
 
   return (
@@ -35,6 +44,12 @@ function App() {
         <button onClick={decrementSet}>点击减法</button>
         {app.loading && <div>loading....</div>}
       </div>
+
+      <br/>
+      <div className="login">
+        <button onClick={login}>登录</button>
+      </div>
+
       <br/>
     </div>
   );

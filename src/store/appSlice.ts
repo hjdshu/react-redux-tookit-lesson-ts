@@ -51,9 +51,9 @@ export const increAsync = (payload:number = 0): AppThunk => async (dispatch, get
   const { app: { count } } = getState();
   dispatch(setLoading(true))
   setTimeout(() => {
-    dispatch(increment(count + 10 + payload));
+    dispatch(increment(payload + 5));
     dispatch(setLoading(false))
-  }, 3000);
+  }, 1000);
 };
 
 export default counterSlice.reducer
