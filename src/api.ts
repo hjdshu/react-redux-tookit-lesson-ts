@@ -1,4 +1,8 @@
 
+const Axios = async () => {
+  return {}
+}
+
 export function UserLogin (userName: string) {
   interface Result {
     errno: number,  //0表示登陆成功，其他表示失败
@@ -12,7 +16,7 @@ export function UserLogin (userName: string) {
   });
 }
 
-const Axios = async () => {}
+
 
 export async function agreement () {
   let res:any
