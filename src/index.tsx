@@ -1,23 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Page1 from 'pages/Page1';
-import Page2 from 'pages/Page2';
+
 import * as serviceWorker from './serviceWorker';
 import store from './store/store'
 import { Provider } from 'react-redux'
-import { Router, Route } from 'react-router'
-import { createHashHistory } from 'history';
-const history = createHashHistory();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router history={history}>
-        <Route path="/" exact component={App}/>
-        <Route path="/Page1" component={Page1}/>
-        <Route path="/Page2" component={Page2}/>
-      </Router>
+      <App/>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
