@@ -6,15 +6,21 @@ import { increment, decrement, increAsync } from './store/appSlice';
 
 function App() {
 
+  // 获取state
   const app = useSelector((state: RootState) => state.app)
   const dispatch = useDispatch()
 
+  // dispatch increment
   const setCountAdd = function () { 
     dispatch(increment(5));
   }
+
+  // dispatch async increAsync
   const setCountAddAsync = function () { 
     dispatch(increAsync(11));
   }
+
+  // dispatch decrement
   const decrementSet = function () { 
     dispatch(decrement());
   }
@@ -29,9 +35,6 @@ function App() {
         <button onClick={decrementSet}>点击减法</button>
         {app.loading && <div>loading....</div>}
       </div>
-      <Link to="/Page1">Page1</Link>
-      <br/>
-      <Link to="/Page2">Page2</Link>
       <br/>
     </div>
   );
