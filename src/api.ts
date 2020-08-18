@@ -1,7 +1,4 @@
-
-const Axios = async () => {
-  return {}
-}
+import axios from 'axios';
 
 export function UserLogin (userName: string) {
   interface Result {
@@ -10,23 +7,28 @@ export function UserLogin (userName: string) {
   }
   return new Promise<Result>((resolve, reject) => {
     resolve({
-      errno: 0,
+      errno: 222,
       msg: 'no error'
     })
   });
 }
 
 
-
-export async function agreement () {
-  let res:any
-  try {
-    res = await Axios();
-  } catch (e) {
-    console.log(e)
+export async function Agreement () {
+  // interface Agresult {
+  //   status: number,
+  //   data: string,
+  // }
+  let res = await axios.get('./index.html');
+  if (res.status == 200) {
+    return {
+      error: 0,
+      data: res.data
+    }
+  } else {
+    return {
+      error: 1,
+      msg: res.statusText
+    }
   }
-  if (res && res.data) {
-    return res.data as string;
-  }
-  return '' as string;
 }

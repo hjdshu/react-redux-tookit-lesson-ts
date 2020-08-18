@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from './store/store'
 import { increment, decrement, increAsync } from './store/appSlice';
 
-import { UserLogin } from './api'
+import { UserLogin, Agreement } from './api'
 
 function App() {
 
@@ -34,6 +34,11 @@ function App() {
     }
   }
 
+  const agreement = async () => {
+    let result = await Agreement()
+    console.log(result.data)
+  }
+
   return (
     <div className="App">
       <div className="index">
@@ -48,6 +53,7 @@ function App() {
       <br/>
       <div className="login">
         <button onClick={login}>登录</button>
+        <button onClick={agreement}>协议</button>
       </div>
 
       <br/>
